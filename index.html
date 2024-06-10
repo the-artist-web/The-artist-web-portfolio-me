@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-theme="dark">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- favicon -->
+        <link rel="icon" href="./assets/image/favicon.png">
+        <!-- meta tags -->
+        <title>The Artist Web</title>
+        <meta title="title" content="The Artist Web">
+        <meta title="description" content="Welcome to my site! I'm Mohamed, and I'm 17 years old. I started programming when I was 15. 
+        I love all fields that involve design, but I chose programming because it's the field that attracted me the most. I decided to 
+        learn and enhance my skills in it, and I've actually achieved most of what I needed, but I still aim to improve myself further. 
+        I won't stop here">
+        <!-- google font -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" 
+        rel="stylesheet">
+        <!-- custom  link -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" 
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" 
+        crossorigin="anonymous" referrerpolicy="no-referrer"/>
+        <!-- custom css link -->
+        <link rel="stylesheet" href="./assets/css/styles.css">
+    </head>
+    <body id="up">
+        <!-- #HEADER -->
+        <header class="header">
+            <div class="header-left" data-header-left>
+                <a href="index.html" class="logo">
+                    <i class="fa-solid fa-laptop-code"></i>
+                    <span class="title-logo">The Artist Web</span>
+                </a>
+
+                <div class="header-search">
+                    <input type="text" placeholder="Find your favorite project" class="search" data-search-header>
+                    <button class="btn-search" data-btn-search-header>search</button>
+                </div>
+            </div>
+
+            <div class="header-right">
+                <a href="index.html" class="header-right-link">
+                    <i class="fa-solid fa-house"></i>
+                </a>
+
+                <button class="header-right-link sun">
+                    <i class="fa-solid fa-sun sun" data-mood-sun></i>
+                    <i class="fa-solid fa-moon moon" data-mood-moon></i>
+                </button>
+
+                <a href="about.html" class="header-right-link">
+                    <img src="./assets/image/favicon.png" alt="the artist web" class="link-go-about img-cover">
+                </a>
+            </div>
+        </header>
+
+        <!-- #NAV MOBILE -->
+        <nav class="navbar-mobile">
+            <button class="navbar-link">
+                <i class="fa-solid fa-sun sun" data-mood-sun></i>
+                <i class="fa-solid fa-moon moon" data-mood-moon></i>
+            </button>
+
+            <a href="index.html" class="navbar-link active">
+                <i class="fa-solid fa-house"></i>
+            </a>
+
+            <a href="about.html" class="navbar-link">
+                <img src="./assets/image/favicon.png" alt="the artist web" class="link-go-about img-cover">
+            </a>
+        </nav>
+
+        <main class="main container">
+            <article>
+                <!-- #HOME SEARCH -->
+                <section class="home-search section">
+                    <img src="./assets/image/bg top about mobile.jpg" alt="bg top about" class="home-search-img img-cover">
+
+                    <div class="home-search-content">
+                        <div class="logo title">
+                            <i class="fa-solid fa-laptop-code"></i>
+                            <span class="title-logo">The Artist Web</span>
+                        </div>
+
+                        <div class="home-search-form">
+                            <input type="text" placeholder="Find your favorite project" class="search" data-home-search>
+                            <button class="btn-search" data-btn-home-search>
+                                <i class="fa-solid fa-magnifying-glass glass"></i>
+                                <span class="span">search</span>
+                            </button>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- #TABS -->
+                <section class="tabs section">
+                    <div class="tab-header">
+                        <button class="btn-tag active" data-Projects>projects</button>
+                        <button class="btn-tag" data-skills>skills</button>
+                        <button class="btn-tag" data-contact>contact</button>
+                    </div>
+
+                    <div class="card-list" data-list-projects data-push-projects-json></div>
+
+                    <div class="skills" data-list-skills data-push-skills></div>
+
+                    <div class="contact" data-list-contact data-push-contact>
+
+                    </div>
+                </section>
+            </article>
+        </main>
+
+        <!-- #FOOTER -->
+        <footer class="footer">
+        <p class="copyright">
+            &copy; 2024 The Artist Web
+        </p>
+        </footer>
+
+        <!-- #BACK TOP BTN -->
+         <a href="#up" class="back-tob-btn" data-back-tob-btn>
+            <i class="fa-solid fa-chevron-up"></i>
+         </a>
+
+        <!-- custom js link -->
+        <script src="./assets/js/home.js"></script>
+        <script src="./assets/js/components.js"></script>
+    </body>
+</html>
