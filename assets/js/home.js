@@ -28,31 +28,31 @@ const push_contact = document.querySelector("[data-push-contact]");
 /* skill */
 let skills_push = `
 <div class="skill-box">
-    <img src="./assets/image/html.png" alt="html" class="skill-img img-cover">
+    <img src="./assets/image/html.png" alt="html" loading="lazy" class="skill-img img-cover">
     <h1 class="skill-title">html</h1>
 </div>
 <div class="skill-box">
-    <img src="./assets/image/css.png" alt="css" class="skill-img img-cover">
+    <img src="./assets/image/css.png" alt="css" loading="lazy" class="skill-img img-cover">
     <h1 class="skill-title">css</h1>
 </div>
 <div class="skill-box">
-    <img src="./assets/image/bootstrap.png" alt="bootstrap" class="skill-img img-cover">
+    <img src="./assets/image/bootstrap.png" alt="bootstrap" loading="lazy" class="skill-img img-cover">
     <h1 class="skill-title">bootstrap</h1>
 </div>
 <div class="skill-box">
-    <img src="./assets/image/javaScript.png" alt="javaScript" class="skill-img img-cover">
+    <img src="./assets/image/javaScript.png" alt="javaScript" loading="lazy" class="skill-img img-cover">
     <h1 class="skill-title">java script</h1>
 </div>
 <div class="skill-box">
-    <img src="./assets/image/api.png" alt="api" class="skill-img img-cover">
+    <img src="./assets/image/api.png" alt="api" loading="lazy" class="skill-img img-cover">
     <h1 class="skill-title">api</h1>
 </div>
 <div class="skill-box">
-    <img src="./assets/image/git.png" alt="git" class="skill-img img-cover">
+    <img src="./assets/image/git.png" alt="git" loading="lazy" class="skill-img img-cover">
     <h1 class="skill-title">git</h1>
 </div>
 <div class="skill-box">
-    <img src="./assets/image/github.png" alt="github" class="skill-img img-cover">
+    <img src="./assets/image/github.png" alt="github" loading="lazy" class="skill-img img-cover">
     <h1 class="skill-title">github</h1>
 </div>
 `;
@@ -151,7 +151,7 @@ function RunningProjects() {
     
                 const cardHTML = `
                 <a href="display.html?search=${item.title}" class="card-box">
-                    <img src="${item.image}" alt="${item.title}" class="img-cover">
+                    <img src="${item.image}" alt="${item.title}" loading="lazy" class="img-cover">
                     <div class="card-box-body">
                         <p class="time">
                             <i class="fa-regular fa-clock clock"></i>
