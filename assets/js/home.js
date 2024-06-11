@@ -1,14 +1,15 @@
 /**
- * search home
+ * header
  */
-const home_search = document.querySelector("[data-home-search]");
-const btn_home_search = document.querySelector("[data-btn-home-search]");
+const headerLeft = document.querySelector("[data-header-left]");
 
-btn_home_search.addEventListener("click", () => {
-    if (home_search.value.trim().toLowerCase()) window.location = `search.html?search=${home_search.value.trim().toLowerCase()}`;
+window.addEventListener("scroll", () => {
+    if (scrollY >= 100) {
+        headerLeft.classList.add("active");
+    } else {
+        headerLeft.classList.remove("active");
+    };
 });
-
-home_search.addEventListener("keyup", (e) => { if (e.key === "Enter") btn_home_search.click(); });
 
 /**
  * tags
@@ -59,7 +60,53 @@ let skills_push = `
 
 /* contact */
 let contact_push = `
+<form action="#">
+    <div class="input-box">
+        <div class="input-field field">
+            <input type="text" placeholder="Full Name" id="name" class="item" autocomplete="off">
+            <div class="error-txt">Full Name can't be blank</div>
+        </div>
+        <div class="input-field field">
+            <input type="text" placeholder="Email Address" id="email" class="item" autocomplete="off">
+            <div class="error-txt">Email Address can't be blank</div>
+        </div>
+    </div>
 
+    <div class="input-box">
+        <div class="input-field field">
+            <input type="text" placeholder="Phone Number" id="phone" class="item" autocomplete="off">
+            <div class="error-txt">Phone Number can't be blank</div>
+        </div>
+        <div class="input-field field">
+            <input type="text" placeholder="Subject" id="subject" class="item" autocomplete="off">
+            <div class="error-txt">Subject can't be blank</div>
+        </div>
+    </div>
+
+    <div class="textarea-field field">
+        <textarea id="massage" cols="30" rows="10" class="item" placeholder="Your Massage" autocomplete="off"></textarea>
+        <div class="error-txt">Massage can't be blank</div>
+    </div>
+
+    <button class="btn-contact" data-btn-contact>Send Massage</button>
+</form>
+
+<div class="contact-box-list">
+    <div class="box-item">
+        <i class="fa-solid fa-location-dot"></i>
+        <h1>Cairo</h1>
+    </div>
+
+    <div class="box-item">
+        <i class="fa-solid fa-envelope"></i>
+        <h1>mohamedyasserxd449@gamil.com</h1>
+    </div>
+
+    <div class="box-item">
+        <i class="fa-solid fa-phone"></i>
+        <h1>+20 1064710784</h1>
+    </div>
+</div>
 `;
 
 Projects.addEventListener("click", () => {
@@ -104,6 +151,72 @@ contact.addEventListener("click", () => {
     push_skills.innerHTML = "";
 
     list_contact.innerHTML = contact_push;
+
+    /**
+     * contact
+     */
+    const btn_contact = document.querySelector("[data-btn-contact]");
+    const name = document.querySelector("#name");
+    const email = document.querySelector("#email");
+    const phone = document.querySelector("#phone");
+    const subject = document.querySelector("#subject");
+    const message = document.querySelector("#massage");
+    const errorTxt = document.querySelector("#error-txt");
+    
+    btn_contact.addEventListener("click", () => {
+        const emailRegex = /^([a-z\d\.-]+)@([a-z\d-]+)\.([a-z]{2,3})(\.[a-z]{2,3})?$/;
+        const phoneRegex = /^\d{10}$/;
+
+        let errors = [];
+    
+        if (name.value.trim().toLowerCase() === "") {
+            errors.push("Name cannot be empty");
+            name.classList.add("active");
+        } else {
+            name.classList.remove("active");
+            name.value = "";
+        }
+    
+        if (!emailRegex.test(email.value)) {
+            errors.push("Invalid email address");
+            email.classList.add("active");
+        } else {
+            email.classList.remove("active");
+            email.value = "";
+        }
+    
+        if (!phoneRegex.test(phone.value)) {
+            errors.push("Invalid phone number");
+            phone.classList.add("active");
+        } else {
+            phone.classList.remove("active");
+            phone.value = "";
+        }
+    
+        if (subject.value.trim() === "") {
+            errors.push("Subject cannot be empty");
+            subject.classList.add("active");
+        } else {
+            subject.classList.remove("active");
+            subject.value = "";
+        }
+    
+        if (message.value.trim() === "") {
+            errors.push("Message cannot be empty");
+            message.classList.add("active");
+        } else {
+            message.classList.remove("active");
+            message.value = "";
+        }
+    
+        if (errors.length > 0) {
+            errorTxt.textContent = errors.join(", ");
+            errorTxt.classList.add("active");
+        } else {
+            errorTxt.textContent = "";
+            errorTxt.classList.remove("active");
+        }
+    });    
 });
 
 /**
@@ -150,14 +263,14 @@ function RunningProjects() {
                 });
     
                 const cardHTML = `
-                <a href="display.html?search=${item.title}" class="card-box">
+                <a href="display.html?search=${item.title}" class="card-box" data-card-box>
                     <img src="${item.image}" alt="${item.title}" loading="lazy" class="img-cover">
                     <div class="card-box-body">
                         <p class="time">
                             <i class="fa-regular fa-clock clock"></i>
                             <span class="span">${new Date().getDate()}/${new Date().getMonth() + 1}/${new Date().getFullYear()}</span>
                         </p>
-                        <h1 class="title-card">${item.title}</h1>
+                        <h1 class="title-card" data-title-card>${item.title}</h1>
                         <div class="skills-list">
                             ${skills}
                         </div>
@@ -184,6 +297,49 @@ function RunningProjects() {
         loadMoreButton.addEventListener('click', displayItems);
     
         displayItems();
+
+        /**
+         * search home
+         */
+        const home_search = document.querySelector("[data-home-search]");
+        const search_header = document.querySelector("[data-search-header]");
+        const btn_home_search = document.querySelector("[data-btn-home-search]");
+        const btn_search_header = document.querySelector("[data-btn-search-header]");
+
+        const card_box = document.querySelectorAll("[data-card-box]");
+        const title_card = document.querySelectorAll("[data-title-card]");
+
+        home_search.addEventListener("keyup", (e) => {
+            search_header.value = home_search.value;
+
+            btn_home_search.addEventListener("click", () => {
+                for (let i = 0; i < title_card.length; i++) {
+                    if (title_card[i].innerHTML.trim().toLowerCase().indexOf(home_search.value.trim().toLowerCase()) >= 0) {
+                        card_box[i].style.display = "";
+                    } else {
+                        card_box[i].style.display = "none";
+                    };
+                };
+                btn_search_header.click();
+            });
+            if (e.key === "Enter") btn_home_search.click();
+        });
+
+        search_header.addEventListener("keyup", (e) => { 
+            home_search.value = search_header.value;
+
+            btn_search_header.addEventListener("click", () => {
+                for (let i = 0; i < title_card.length; i++) {
+                    if (title_card[i].innerHTML.trim().toLowerCase().indexOf(search_header.value.trim().toLowerCase()) >= 0) {
+                        card_box[i].style.display = "";
+                    } else {
+                        card_box[i].style.display = "none";
+                    };
+                };
+                btn_home_search.click();
+            });
+            if (e.key === "Enter") btn_search_header.click();
+        });
     });
     
 };

@@ -1,17 +1,4 @@
 /**
- * header
- */
-const headerLeft = document.querySelector("[data-header-left]");
-
-window.addEventListener("scroll", () => {
-    if (scrollY >= 100) {
-        headerLeft.classList.add("active");
-    } else {
-        headerLeft.classList.remove("active");
-    };
-});
-
-/**
  * mood
  */
 const HTML = document.documentElement;
@@ -48,18 +35,6 @@ for (let i = 0; i < moodSun.length; i++) {
         localStorage.setItem("moodMoon", null);
     });
 };
-
-/**
- * search header
- */
-const search_header = document.querySelector("[data-search-header]");
-const btn_search_header = document.querySelector("[data-btn-search-header]");
-
-btn_search_header.addEventListener("click", () => {
-    if (search_header.value.trim().toLowerCase()) window.location = `search.html?search=${search_header.value.trim().toLowerCase()}`;
-});
-
-search_header.addEventListener("keyup", (e) => { if (e.key === "Enter") btn_search_header.click(); });
 
 /**
  * #BACK TOP BTN 
