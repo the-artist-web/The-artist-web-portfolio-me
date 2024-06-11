@@ -341,6 +341,5 @@ function RunningProjects() {
             if (e.key === "Enter") btn_search_header.click();
         });
     });
-    
 };
 RunningProjects();
