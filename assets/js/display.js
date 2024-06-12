@@ -2,7 +2,6 @@
  * push hero display
  */
 const push_hero_display = document.querySelector("[data-push-hero-display]");
-const header_title = document.querySelector("[data-header-title]");
 const card_list = document.querySelector("[data-card-list]");
 
 push_hero_display.innerHTML = `
@@ -58,8 +57,6 @@ fetch("./assets/json/data.json")
             <a href="${item.link}" target="_blank" class="link">${item.link}</a>
         </div>
         `;
-
-        header_title.innerHTML = `${item.title}`;
     });
 
     data.cards.forEach(item => {

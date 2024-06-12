@@ -25,8 +25,11 @@
         <link rel="stylesheet" href="./assets/css/styles.css">
     </head>
     <body id="up">
+        <!-- #OVERFLOW -->
+         <div class="overflow" data-overflow></div>
+
         <!-- #HEADER -->
-        <header class="header">
+        <header class="header-home">
             <div class="header-left" data-header-left>
                 <a href="index.html" class="logo">
                     <i class="fa-solid fa-laptop-code"></i>
@@ -57,39 +60,47 @@
 
         <!-- #NAV MOBILE -->
         <nav class="navbar-mobile">
+            <a href="index.html" class="navbar-link active">
+                <i class="fa-solid fa-house"></i>
+            </a>
+
+            <button class="navbar-link" data-btn-mobile-search-show>
+                <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
+
             <button class="navbar-link">
                 <i class="fa-solid fa-sun sun" data-mood-sun></i>
                 <i class="fa-solid fa-moon moon" data-mood-moon></i>
             </button>
-
-            <a href="index.html" class="navbar-link active">
-                <i class="fa-solid fa-house"></i>
-            </a>
 
             <a href="about.html" class="navbar-link">
                 <img src="./assets/image/favicon.png" alt="the artist web" loading="lazy" class="link-go-about img-cover">
             </a>
         </nav>
 
+        <!-- #SEARCH MOBILE -->
+        <div class="search-mobile" data-search-mobile-dad>
+            <input type="text" placeholder="Find your favorite project" class="search-mobile" data-search-mobile>
+            <button class="btn-search-mobile" data-btn-search-mobile>
+                <i class="fa-solid fa-magnifying-glass glass"></i>
+            </button>
+        </div>
+
         <main class="main container">
             <article>
                 <!-- #HOME SEARCH -->
                 <section class="home-search section">
-                    <img src="./assets/image/bg top about mobile.jpg" alt="bg top about" loading="lazy" class="home-search-img img-cover">
+                    <div class="logo title">
+                        <i class="fa-solid fa-laptop-code"></i>
+                        <span class="title-logo">The Artist Web</span>
+                    </div>
 
-                    <div class="home-search-content">
-                        <div class="logo title">
-                            <i class="fa-solid fa-laptop-code"></i>
-                            <span class="title-logo">The Artist Web</span>
-                        </div>
-
-                        <div class="home-search-form">
-                            <input type="text" placeholder="Find your favorite project" class="search" data-home-search>
-                            <button class="btn-search" data-btn-home-search>
-                                <i class="fa-solid fa-magnifying-glass glass"></i>
-                                <span class="span">search</span>
-                            </button>
-                        </div>
+                    <div class="home-search-form">
+                        <input type="text" placeholder="Find your favorite project" class="search" data-home-search>
+                        <button class="btn-search" data-btn-home-search>
+                            <i class="fa-solid fa-magnifying-glass glass"></i>
+                            <span class="span">search</span>
+                        </button>
                     </div>
                 </section>
 

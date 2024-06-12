@@ -12,6 +12,16 @@ window.addEventListener("scroll", () => {
 });
 
 /**
+ * search home
+ */
+const home_search = document.querySelector("[data-home-search]");
+const btn_home_search = document.querySelector("[data-btn-home-search]");
+
+btn_home_search.addEventListener("click", () => { if (home_search.value) window.location = `search.html?search=${home_search.value.trim().toLowerCase()}`; });
+
+home_search.addEventListener("keydown", (e) => { if (e.key === "Enter") btn_home_search.click(); });
+
+/**
  * tags
  */
 const Projects = document.querySelector("[data-Projects]");
@@ -263,14 +273,14 @@ function RunningProjects() {
                 });
     
                 const cardHTML = `
-                <a href="display.html?search=${item.title}" class="card-box" data-card-box>
+                <a href="display.html?search=${item.title}" class="card-box">
                     <img src="${item.image}" alt="${item.title}" loading="lazy" class="img-cover">
                     <div class="card-box-body">
                         <p class="time">
                             <i class="fa-regular fa-clock clock"></i>
                             <span class="span">${new Date().getDate()}/${new Date().getMonth() + 1}/${new Date().getFullYear()}</span>
                         </p>
-                        <h1 class="title-card" data-title-card>${item.title}</h1>
+                        <h1 class="title-card">${item.title}</h1>
                         <div class="skills-list">
                             ${skills}
                         </div>
@@ -297,49 +307,6 @@ function RunningProjects() {
         loadMoreButton.addEventListener('click', displayItems);
     
         displayItems();
-
-        /**
-         * search home
-         */
-        const home_search = document.querySelector("[data-home-search]");
-        const search_header = document.querySelector("[data-search-header]");
-        const btn_home_search = document.querySelector("[data-btn-home-search]");
-        const btn_search_header = document.querySelector("[data-btn-search-header]");
-
-        const card_box = document.querySelectorAll("[data-card-box]");
-        const title_card = document.querySelectorAll("[data-title-card]");
-
-        home_search.addEventListener("keyup", (e) => {
-            search_header.value = home_search.value;
-
-            btn_home_search.addEventListener("click", () => {
-                for (let i = 0; i < title_card.length; i++) {
-                    if (title_card[i].innerHTML.trim().toLowerCase().indexOf(home_search.value.trim().toLowerCase()) >= 0) {
-                        card_box[i].style.display = "";
-                    } else {
-                        card_box[i].style.display = "none";
-                    };
-                };
-                btn_search_header.click();
-            });
-            if (e.key === "Enter") btn_home_search.click();
-        });
-
-        search_header.addEventListener("keyup", (e) => { 
-            home_search.value = search_header.value;
-
-            btn_search_header.addEventListener("click", () => {
-                for (let i = 0; i < title_card.length; i++) {
-                    if (title_card[i].innerHTML.trim().toLowerCase().indexOf(search_header.value.trim().toLowerCase()) >= 0) {
-                        card_box[i].style.display = "";
-                    } else {
-                        card_box[i].style.display = "none";
-                    };
-                };
-                btn_home_search.click();
-            });
-            if (e.key === "Enter") btn_search_header.click();
-        });
     });
 };
 RunningProjects();

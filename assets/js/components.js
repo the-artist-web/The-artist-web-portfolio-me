@@ -1,4 +1,9 @@
 /**
+ * overflow
+ */
+const overflow = document.querySelector("[data-overflow]");
+
+/**
  * mood
  */
 const HTML = document.documentElement;
@@ -48,3 +53,36 @@ window.addEventListener("scroll", () => {
         back_tob_btn.classList.remove("active");
     };
 });
+
+/**
+ * search header and search mobile
+ */
+const btn_mobile_search_show = document.querySelector("[data-btn-mobile-search-show]");
+const search_mobile_dad = document.querySelector("[data-search-mobile-dad]");
+const search_mobile = document.querySelector("[data-search-mobile]");
+const btn_search_mobile = document.querySelector("[data-btn-search-mobile]");
+
+const search_header = document.querySelector("[data-search-header]");
+const btn_search_header = document.querySelector("[data-btn-search-header]");
+
+// search mobile
+btn_mobile_search_show.addEventListener("click", () => {
+    search_mobile_dad.classList.toggle("active");
+    overflow.classList.toggle("active");
+    search_mobile.classList.toggle("active");
+});
+
+overflow.addEventListener("click", () => {
+    search_mobile_dad.classList.toggle("active");
+    overflow.classList.toggle("active");
+    search_mobile.classList.toggle("active");
+});
+
+btn_search_mobile.addEventListener("click", () => { if (search_mobile.value) window.location = `search.html?search=${search_mobile.value.trim().toLowerCase()}`; });
+
+search_mobile.addEventListener("keydown", (e) => { if (e.key === "Enter") btn_search_mobile.click(); });
+
+// search header
+btn_search_header.addEventListener("click", () => { if (search_header.value) window.location = `search.html?search=${search_header.value.trim().toLowerCase()}`; });
+
+search_header.addEventListener("keydown", (e) => { if (e.key === "Enter") btn_search_header.click(); });
