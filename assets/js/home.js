@@ -70,7 +70,7 @@ let skills_push = `
 
 /* contact */
 let contact_push = `
-<form action="#">
+<form>
     <div class="input-box">
         <div class="input-field field">
             <input type="text" placeholder="Full Name" id="name" class="item" autocomplete="off">
