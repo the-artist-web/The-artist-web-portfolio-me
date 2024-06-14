@@ -70,7 +70,7 @@ let skills_push = `
 
 /* contact */
 let contact_push = `
-<form>
+<div class="form">
     <div class="input-box">
         <div class="input-field field">
             <input type="text" placeholder="Full Name" id="name" class="item" autocomplete="off">
@@ -99,7 +99,7 @@ let contact_push = `
     </div>
 
     <button class="btn-contact" data-btn-contact>Send Massage</button>
-</form>
+</div>
 
 <div class="contact-box-list">
     <div class="box-item">

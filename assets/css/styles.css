@@ -889,12 +889,12 @@ body {
   #CONTACT
 \*---------------------------------------------*/
 
-.contact form {
+.contact .form {
   text-align: center;
   width: 100%;
 }
 
-form .input-box {
+.form .input-box {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -1345,7 +1345,7 @@ form .input-box {
   .skills { grid-template-columns: repeat(2, 1fr); }
 
   /* #CONTACT */
-  form .input-box {
+  .form .input-box {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -1403,7 +1403,7 @@ form .input-box {
   }
 
   /* #CONTACT */
-  .contact form {
+  .contact .form {
     margin: 0 auto;
     width: 750px;
   }
