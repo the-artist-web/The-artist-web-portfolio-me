@@ -59,6 +59,10 @@ let skills_push = `
     <h1 class="skill-title">api</h1>
 </div>
 <div class="skill-box">
+    <img src="./assets/image/vue.js.png" alt="api" loading="lazy" class="skill-img img-cover">
+    <h1 class="skill-title">vue.js</h1>
+</div>
+<div class="skill-box">
     <img src="./assets/image/git.png" alt="git" loading="lazy" class="skill-img img-cover">
     <h1 class="skill-title">git</h1>
 </div>
