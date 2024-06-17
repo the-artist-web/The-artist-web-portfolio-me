@@ -299,6 +299,7 @@ body {
 
 .card-box .card-box-body .skills-list {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   gap: 10px;
 }
